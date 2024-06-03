@@ -9,14 +9,14 @@ RUN apt-get update \
 	&& apt-get install -y apt-utils build-essential meson ninja-build git gobject-introspection \
 		ca-certificates cmake liblapack-dev libjpeg-dev libtiff-dev libtiff5-dev libglib2.0-dev libjson-glib-dev \
 		libopenmpi-dev libhdf5-dev libclfft-dev libgsl-dev libgirepository1.0-dev qtbase5-dev python3 \
-		python3-dev python3-gi python-gi-dev python3-sphinx python3-pip python3-numpy python3-cairo \
-		python3-gi-cairo python3-sphinx python3-pyqt5 python3-pyqtgraph pkg-config ocl-icd-libopencl1 \
+		python3-dev python3-gi python-gi-dev python3-sphinx python3-sphinxcontrib.bibtex python3-pip \
+		python3-numpy python3-cairo python3-gi-cairo python3-pyqt5 python3-pyqtgraph pkg-config ocl-icd-libopencl1 \
 		ocl-icd-opencl-dev fftw3-dev opencl-headers clinfo zlib1g-dev gtk-doc-tools asciidoc vim \
-		libpangocairo-1.0-0 libpython3-dev libopencv-dev python3-opencv libzmq3-dev libclblast-dev \
+		libpangocairo-1.0-0 libpython3-dev libopencv-dev python3-opencv libzmq3-dev libclblast-dev python3-jinja2 \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip \
-	&& pip3 install setuptools tifffile sphinxcontrib-bibtex
+	&& pip3 install setuptools tifffile
 
 # Configure compute environment
 ENV LD_LIBRARY_PATH /usr/local/lib/:${LD_LIBRARY_PATH}
