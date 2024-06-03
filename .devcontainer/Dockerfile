@@ -18,7 +18,7 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip \
-	&& pip3 install setuptools tifffile numpy scikit-image
+	&& pip3 install setuptools tifffile scikit-image numpy==1.22.0
 
 # Configure compute environment
 ENV LD_LIBRARY_PATH /usr/local/lib/:${LD_LIBRARY_PATH}
