@@ -1,0 +1,8 @@
+{
+  "name": "ufo-run",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--gpus=all"],
+  "postCreateCommand": ["nvidia-smi"]
+}
